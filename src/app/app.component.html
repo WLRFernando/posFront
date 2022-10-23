@@ -2,18 +2,21 @@
   <div class="data-set">
     <h1>Customer Form</h1>
     <hr>
+    <form [formGroup]="customerForm">
     <div class="row">
       <div class="col-12 col-md-4 col-lg-3">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Email</mat-label>
-          <input type="email" matInput 
-                 placeholder="Ex. pat@example.com">
+          <mat-label>Customer ID</mat-label>
+          <input type="text" matInput 
+                formControlName="id"
+                 placeholder="Ex. S0001">
         </mat-form-field>
       </div>
       <div class="col-12 col-md-4 col-lg-3">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Customer Name</mat-label>
           <input type="text" matInput 
+                formControlName="name"
                  placeholder="John">
         </mat-form-field>
       </div>
@@ -21,13 +24,15 @@
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Address</mat-label>
           <input type="text" matInput 
+                formControlName="address"
                  placeholder="#5 , Main Road, Panadura.">
         </mat-form-field>
       </div>
       <div class="col-12 col-md-4 col-lg-3">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Salary</mat-label>
-          <input type="number" matInput 
+          <input type="number" matInput
+                formControlName="salary" 
                  placeholder="50000">
         </mat-form-field>
       </div>
@@ -35,14 +40,16 @@
         <p style="text-align: right">
           <button
             mat-raised-button
-            color="primary">
+            color="primary"
+            (click)="saveCustomer()">
           Save Customer</button>
         </p>
       </div>
       
+    </div>
+    </form>
   </div>
-  </div>
-
+  <hr>
   <div class="table-outer">
 
   </div>
