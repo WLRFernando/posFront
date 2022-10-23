@@ -1,0 +1,21 @@
+.main-outer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-set {
+    height: 250px;
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.table-outer {
+    flex: 1;
+    border: 1px solid red;
+}
+
+.full-width {
+    width: 100%;
+}
