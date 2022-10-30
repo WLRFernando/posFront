@@ -41,15 +41,18 @@
           <button
             mat-raised-button
             color="primary"
+            [disabled]="customerForm.invalid"
             (click)="saveCustomer()">
           Save Customer</button>
         </p>
+        <hr>
+
       </div>
       
     </div>
     </form>
   </div>
-  <hr>
+  
   <div class="table-outer">
 
   </div>
