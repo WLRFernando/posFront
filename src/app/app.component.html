@@ -47,7 +47,16 @@
             <p style="text-align: right">
               <button
                 mat-raised-button
+                color=red
+                [disabled]="customerForm.get('id')?.invalid"
+                (click)="getCustomer()"
+              >Get Customer
+              </button>
+              &nbsp; | &nbsp;
+              <button
+                mat-raised-button
                 color="primary"
+                [disabled]="customerForm.invalid"
                 (click)="saveCustomer()"
               >Save Customer
               </button>
@@ -61,6 +70,27 @@
 
   </div>
   <div class="table-outer">
-
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Customer ID</th>
+          <th>Customer Name</th>
+          <th>Address</th>
+          <th>Salary</th>
+          <th>Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tempdata of customerList; index as num">
+          <td>{{num+1}}</td>
+          <td>{{tempdata.id}}</td>
+          <td>{{tempdata.name}}</td>
+          <td>{{tempdata.address}}</td>
+          <td>{{tempdata.salary}}</td>
+          <td><button class="btn btn-danger" (click)="deleteCustomer(tempdata.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
